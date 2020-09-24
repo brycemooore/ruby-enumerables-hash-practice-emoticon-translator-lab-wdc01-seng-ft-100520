@@ -1,7 +1,16 @@
+require "yaml"
+require "pry"
 # require modules here
 
 def load_library
-  # code goes here
+  hash = YAML.load_file('emoticons.yml')
+  library = hash.map{|key, data|
+    key = {
+      :english => data[0],
+      :japanese => data[1]
+    }
+  }
+  library
 end
 
 def get_japanese_emoticon
@@ -11,3 +20,5 @@ end
 def get_english_meaning
   # code goes here
 end
+
+load_library
