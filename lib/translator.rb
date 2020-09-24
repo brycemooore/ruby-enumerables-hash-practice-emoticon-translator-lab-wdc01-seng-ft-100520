@@ -11,6 +11,7 @@ def load_library
     }
   }
   binding.pry
+  library
 end
 
 def get_japanese_emoticon
