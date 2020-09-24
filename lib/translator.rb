@@ -2,8 +2,8 @@ require "yaml"
 require "pry"
 # require modules here
 
-def load_library
-  hash = YAML.load_file('lib/emoticons.yml')
+def load_library(file_path)
+  hash = YAML.load_file(file_path)
   library = hash.each_with_object({}) {|(key, data), final|
     final[key] = {
       :english => data[0],
