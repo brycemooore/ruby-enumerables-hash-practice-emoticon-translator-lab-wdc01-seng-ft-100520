@@ -3,7 +3,7 @@ require "pry"
 # require modules here
 
 def load_library
-  hash = YAML.load_file('emoticons.yml')
+  hash = YAML.load_file('lib/emoticons.yml')
   library = hash.map{|key, data|
     key = {
       :english => data[0],
