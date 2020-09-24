@@ -4,13 +4,12 @@ require "pry"
 
 def load_library
   hash = YAML.load_file('lib/emoticons.yml')
-  library = hash.each{|key, data|
+  hash.each{|key, data|
     key = {
       :english => data[0],
       :japanese => data[1]
     }
   }
-  library
   binding.pry
 end
 
